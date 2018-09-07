@@ -1,0 +1,187 @@
+2018-08-29 17:30:07.296331: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2018-08-29 17:30:11.172585: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: Tesla P40 major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:3b:00.0
+totalMemory: 23.88GiB freeMemory: 23.71GiB
+2018-08-29 17:30:11.405079: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 1 with properties: 
+name: Tesla P40 major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:d8:00.0
+totalMemory: 22.38GiB freeMemory: 22.22GiB
+2018-08-29 17:30:11.407399: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0, 1
+2018-08-29 17:30:13.479982: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-08-29 17:30:13.480051: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 1 
+2018-08-29 17:30:13.480061: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N Y 
+2018-08-29 17:30:13.480067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 1:   Y N 
+2018-08-29 17:30:13.481241: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 23229 MB memory) -> physical GPU (device: 0, name: Tesla P40, pci bus id: 0000:3b:00.0, compute capability: 6.1)
+2018-08-29 17:30:13.710163: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 21773 MB memory) -> physical GPU (device: 1, name: Tesla P40, pci bus id: 0000:d8:00.0, compute capability: 6.1)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+the_input (InputLayer)       (None, 1600, 200, 1)      0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 1600, 200, 32)     288       
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 1600, 200, 32)     6400      
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 1600, 200, 32)     9248      
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 800, 100, 32)      0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 800, 100, 32)      3200      
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 800, 100, 64)      18496     
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 800, 100, 64)      3200      
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 800, 100, 64)      36928     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 400, 50, 64)       0         
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 400, 50, 64)       1600      
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 400, 50, 128)      73856     
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 400, 50, 128)      1600      
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 400, 50, 128)      147584    
+_________________________________________________________________
+batch_normalization_6 (Batch (None, 400, 50, 128)      1600      
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 200, 25, 128)      0         
+_________________________________________________________________
+conv2d_7 (Conv2D)            (None, 200, 25, 128)      147584    
+_________________________________________________________________
+batch_normalization_7 (Batch (None, 200, 25, 128)      800       
+_________________________________________________________________
+conv2d_8 (Conv2D)            (None, 200, 25, 128)      147584    
+_________________________________________________________________
+batch_normalization_8 (Batch (None, 200, 25, 128)      800       
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 200, 25, 128)      0         
+_________________________________________________________________
+conv2d_9 (Conv2D)            (None, 200, 25, 128)      147584    
+_________________________________________________________________
+batch_normalization_9 (Batch (None, 200, 25, 128)      800       
+_________________________________________________________________
+conv2d_10 (Conv2D)           (None, 200, 25, 128)      147584    
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 200, 25, 128)      0         
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 200, 3200)         0         
+_________________________________________________________________
+batch_normalization_10 (Batc (None, 200, 3200)         12800     
+_________________________________________________________________
+dense_1 (Dense)              (None, 200, 128)          409728    
+_________________________________________________________________
+batch_normalization_11 (Batc (None, 200, 128)          512       
+_________________________________________________________________
+dense_2 (Dense)              (None, 200, 1434)         184986    
+_________________________________________________________________
+batch_normalization_12 (Batc (None, 200, 1434)         5736      
+_________________________________________________________________
+Activation0 (Activation)     (None, 200, 1434)         0         
+=================================================================
+Total params: 1,510,498
+Trainable params: 1,490,974
+Non-trainable params: 19,524
+_________________________________________________________________
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+the_input (InputLayer)          (None, 1600, 200, 1) 0                                            
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (None, 1600, 200, 32 288         the_input[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_1 (BatchNor (None, 1600, 200, 32 6400        conv2d_1[0][0]                   
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (None, 1600, 200, 32 9248        batch_normalization_1[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_1 (MaxPooling2D)  (None, 800, 100, 32) 0           conv2d_2[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_2 (BatchNor (None, 800, 100, 32) 3200        max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (None, 800, 100, 64) 18496       batch_normalization_2[0][0]      
+__________________________________________________________________________________________________
+batch_normalization_3 (BatchNor (None, 800, 100, 64) 3200        conv2d_3[0][0]                   
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (None, 800, 100, 64) 36928       batch_normalization_3[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_2 (MaxPooling2D)  (None, 400, 50, 64)  0           conv2d_4[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_4 (BatchNor (None, 400, 50, 64)  1600        max_pooling2d_2[0][0]            
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (None, 400, 50, 128) 73856       batch_normalization_4[0][0]      
+__________________________________________________________________________________________________
+batch_normalization_5 (BatchNor (None, 400, 50, 128) 1600        conv2d_5[0][0]                   
+__________________________________________________________________________________________________
+conv2d_6 (Conv2D)               (None, 400, 50, 128) 147584      batch_normalization_5[0][0]      
+__________________________________________________________________________________________________
+batch_normalization_6 (BatchNor (None, 400, 50, 128) 1600        conv2d_6[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_3 (MaxPooling2D)  (None, 200, 25, 128) 0           batch_normalization_6[0][0]      
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (None, 200, 25, 128) 147584      max_pooling2d_3[0][0]            
+__________________________________________________________________________________________________/root/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+/home/speech.AI/github/DFCNN/SpeechModel_DFCNN.py:72: UserWarning: Update your `BatchNormalization` call to the Keras 2 API: `BatchNormalization(axis=1)`
+  layer_h1 = BatchNormalization(mode=0,axis=1)(layer_h1)
+
+batch_normalization_7 (BatchNor (None, 200, 25, 128) 800         conv2d_7[0][0]                   
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (None, 200, 25, 128) 147584      batch_normalization_7[0][0]      
+__________________________________________________________________________________________________
+batch_normalization_8 (BatchNor (None, 200, 25, 128) 800         conv2d_8[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_4 (MaxPooling2D)  (None, 200, 25, 128) 0           batch_normalization_8[0][0]      
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (None, 200, 25, 128) 147584      max_pooling2d_4[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_9 (BatchNor (None, 200, 25, 128) 800         conv2d_9[0][0]                   
+__________________________________________________________________________________________________
+conv2d_10 (Conv2D)              (None, 200, 25, 128) 147584      batch_normalization_9[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_5 (MaxPooling2D)  (None, 200, 25, 128) 0           conv2d_10[0][0]                  
+__________________________________________________________________________________________________
+reshape_1 (Reshape)             (None, 200, 3200)    0           max_pooling2d_5[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_10 (BatchNo (None, 200, 3200)    12800       reshape_1[0][0]                  
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 200, 128)     409728      batch_normalization_10[0][0]     
+__________________________________________________________________________________________________
+batch_normalization_11 (BatchNo (None, 200, 128)     512         dense_1[0][0]                    
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 200, 1434)    184986      batch_normalization_11[0][0]     
+__________________________________________________________________________________________________
+batch_normalization_12 (BatchNo (None, 200, 1434)    5736        dense_2[0][0]                    
+__________________________________________________________________________________________________
+Activation0 (Activation)        (None, 200, 1434)    0           batch_normalization_12[0][0]     
+__________________________________________________________________________________________________
+the_labels (InputLayer)         (None, 64)           0                                            
+__________________________________________________________________________________________________
+input_length (InputLayer)       (None, 1)            0                                            
+__________________________________________________________________________________________________
+label_length (InputLayer)       (None, 1)            0                                            
+__________________________________________________________________________________________________
+ctc (Lambda)                    (None, 1)            0           Activation0[0][0]                
+                                                                 the_labels[0][0]                 
+                                                                 input_length[0][0]               
+                                                                 label_length[0][0]               
+==================================================================================================
+Total params: 1,510,498
+Trainable params: 1,490,974
+Non-trainable params: 19,524
+__________________________________________________________________________________________________
+[*提示] 创建模型成功，模型编译成功
+Traceback (most recent call last):
+  File "train_mspeech.py", line 50, in <module>
+    ms.TrainModel(datapath, epoch = 50, batch_size = 32, save_step = 1000)
+  File "/home/speech.AI/github/DFCNN/SpeechModel_DFCNN.py", line 178, in TrainModel
+    data=DataSpeech(datapath, 'train')
+  File "/home/speech.AI/github/DFCNN/read_data.py", line 54, in __init__
+    self.LoadDataList()
+  File "/home/speech.AI/github/DFCNN/read_data.py", line 102, in LoadDataList
+    self.dic_symbollist_aishell,self.list_symbolnum_aishell = get_wav_symbol(self.datapath + filename_symbollist_aishell)
+  File "/home/speech.AI/github/DFCNN/general_function/file_wav.py", line 201, in get_wav_symbol
+    txt_obj=open(filename,'r') # 打开文件并读入
+FileNotFoundError: [Errno 2] No such file or directory: 'dataset/aishell/train.syllabel.txt'
