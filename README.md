@@ -106,19 +106,3 @@ resource.tgz
 ST-CMDS-20170001_1-OS.tar.gz 
 <http://cn-mirror.openslr.org/resources/38/ST-CMDS-20170001_1-OS.tar.gz>
 <http://www.openslr.org/resources/38/ST-CMDS-20170001_1-OS.tar.gz>
-
-特别鸣谢！感谢前辈们的公开语音数据集
-
-如果提供的数据集链接无法打开和下载，请点击该链接 [OpenSLR](http://www.openslr.org)
-
-## Log
-日志
-
-链接：[进展日志](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/log.md)
-
-## Contributors 贡献者们
-@ZJUGuoShuai @williamchenwl
-
-@nl8590687 (repo owner)
-
-[打赏作者](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/donate)
