@@ -37,12 +37,6 @@ ASRT API服务器启动请执行：
 $ python3 asrserver.py
 ```
 
-如果要训练和使用模型251，请在代码中 `import SpeechModel` 的相应位置做修改。
-
-如果程序运行期间或使用中有什么问题，可以及时在issue中提出来，我将尽快做出答复。
-
-提问前可以先 [查看常见问题](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/issues) 
-
 ## Model 模型
 
 ### Speech Model 语音模型
