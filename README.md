@@ -6,10 +6,6 @@
 ## Introduction 简介
 
 本项目使用TensorFlow基于全深度卷积神经网络实现。
-
-
-本项目目前已经可以正常进行训练了。
-
 通过git克隆仓库以后，需要将datalist目录下的文件全部拷贝到dataset目录下，也就是将其跟数据集放在一起。
 ```shell
 $ cp -rf datalist/* dataset/
