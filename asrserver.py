@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: nl8590687
 语音识别API的HTTP服务器程序
 
 """
