@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-@author: nl8590687
+
 asrserver测试专用客户端
 
 '''
