@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: nl8590687
 用于训练语音识别系统语音模型的程序
 
 """
@@ -51,7 +50,7 @@ else:
 ms = ModelSpeech(datapath)
 
 #ms.LoadModel(modelpath + 'm_DFCNN/speech_model_DFCNN_e_0_step_84000.model')
-ms.LoadModel(modelpath + 'm_dfcnn/speech_model_dfcnn_e_0_step_' + base_count +'.model')
+#ms.LoadModel(modelpath + 'm_dfcnn/speech_model_dfcnn_e_0_step_' + base_count +'.model')
 ms.TrainModel(datapath, epoch = 50, batch_size = 64, save_step = 1000)
 
 
