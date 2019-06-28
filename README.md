@@ -19,7 +19,7 @@ $ python3 train_mspeech.py
 ```
 本项目开始测试请执行：
 ```shell
-$ python3 test_mspeech.py
+$ python3 test_mspeech.py iters_num （这里的iters_num为迭代的step数，可以在生成的step_dfcnn.txt文件里查看）
 ```
 测试之前，请确保代码中填写的模型文件路径存在。
 
